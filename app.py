@@ -31,7 +31,7 @@ def index():
             data = np.asarray(face)
             batch = data.reshape(-1,64,64,3)
             pred = int(model.predict(batch)[0][0])
-            cv2.putText(image, str(pred), (x-5, y-3), cv2.FONT_HERSHEY_SIMPLEX,0.75, (0, 0, 255), 2)
+            cv2.putText(image, str(pred), (x+5, y+3), cv2.FONT_HERSHEY_SIMPLEX,0.75, (0, 0, 255), 2)
             break
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         retval, buffer  = cv2.imencode('.png', image)
